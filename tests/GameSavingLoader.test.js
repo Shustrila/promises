@@ -16,10 +16,10 @@ describe('TEST: GameSavingLoader', () => {
   });
 
   test('load error', () => {
-    readGameSaving.mockRejectedValue(new TypeError('Error'));
+    readGameSaving.mockRejectedValue('ERROR: load error');
 
     GameSavingLoader.load().catch((err) => {
-      expect(err).toThrow('Error');
+      expect(err).toThrow();
     });
   });
 });
